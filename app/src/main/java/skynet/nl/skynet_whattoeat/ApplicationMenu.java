@@ -13,7 +13,7 @@ public class ApplicationMenu extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_application_menu);
     }
-
+        //test for github
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
