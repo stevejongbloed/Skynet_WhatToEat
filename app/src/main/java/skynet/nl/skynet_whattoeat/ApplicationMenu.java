@@ -15,3 +15,4 @@ public class ApplicationMenu extends Activity {
         setContentView(R.layout.activity_application_menu);
     }
     // Hooi.
+}
