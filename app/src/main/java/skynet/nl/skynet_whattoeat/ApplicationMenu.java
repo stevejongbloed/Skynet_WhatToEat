@@ -14,5 +14,4 @@ public class ApplicationMenu extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_application_menu);
     }
-
-}
+    // Hooi.
