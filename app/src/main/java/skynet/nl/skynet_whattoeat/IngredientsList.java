@@ -1,28 +1,26 @@
 package skynet.nl.skynet_whattoeat;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 
-public class ApplicationMenu extends Activity {
+public class IngredientsList extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_application_menu);
-        ActionBar bar = getActionBar();
+        setContentView(R.layout.activity_ingredients_list);
+        //Toast.makeText(this,"nieuw",Toast.LENGTH_LONG).show();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_application_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_ingredients_list, menu);
         return true;
     }
 
@@ -33,25 +31,11 @@ public class ApplicationMenu extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        switch(id){
-
-            case R.id.a1:
-                expirationDate();
-                return true;
-            case R.id.a2:
-                setting();
-                return true;
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void expirationDate(){
-        startActivity(new Intent(ApplicationMenu.this,IngredientsList.class));
-    }
-
-    public void setting(){
-
-    }
-
 }
