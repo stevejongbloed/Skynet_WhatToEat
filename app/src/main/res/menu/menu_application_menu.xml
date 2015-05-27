@@ -5,7 +5,13 @@
     tools:context=".ApplicationMenu">
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/a1"
+        android:title="@string/action_ingredient"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/a2"
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="ifRoom" />
