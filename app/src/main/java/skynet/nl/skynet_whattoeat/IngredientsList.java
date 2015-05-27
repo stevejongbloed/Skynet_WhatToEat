@@ -1,17 +1,19 @@
 package skynet.nl.skynet_whattoeat;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
-public class IngredientsList extends ActionBarActivity {
+public class IngredientsList extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredients_list);
+        //Toast.makeText(this,"nieuw",Toast.LENGTH_LONG).show();
     }
 
 

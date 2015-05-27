@@ -2,9 +2,11 @@ package skynet.nl.skynet_whattoeat;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 
@@ -35,17 +37,17 @@ public class ApplicationMenu extends Activity {
 
             case R.id.a1:
                 expirationDate();
-                break;
+                return true;
             case R.id.a2:
                 setting();
-                break;
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
     public void expirationDate(){
-
+        startActivity(new Intent(ApplicationMenu.this,IngredientsList.class));
     }
 
     public void setting(){
