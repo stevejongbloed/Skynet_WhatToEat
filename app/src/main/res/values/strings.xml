@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">Skynet_WhatToEat</string>
+    <string name="app_name">What2eat</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="action_expirationdate">Expiration date</string>
 </resources>
