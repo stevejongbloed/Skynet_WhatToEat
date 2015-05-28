@@ -6,4 +6,6 @@
     <string name="action_search">Search</string>
     <string name="action_ingredient">Expiration date</string>
     <string name="title_activity_ingredients_list">IngredientsList</string>
+    <string name="title_activity_login">login</string>
+    <string name="title_activity_settings">Settings</string>
 </resources>
