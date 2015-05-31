@@ -12,9 +12,10 @@
         android:id="@+id/listView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/button" />
+        android:layout_above="@+id/a4" />
 
-    <View android:id="@+id/strut"
+    <View
+        android:id="@+id/strut"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_centerHorizontal="true"/>
@@ -30,7 +31,8 @@
         android:text="CREATE RECIPE"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/button" />
+        android:onClick="createRecipe"
+        android:id="@+id/a4" />
 
     <Button
         android:textColor="#FFF"
@@ -40,6 +42,8 @@
         android:layout_alignLeft="@id/strut"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:text="YOUR RECIPES"/>
+        android:onClick="viewRecipe"
+        android:text="YOUR RECIPES"
+        android:id="@+id/a5"/>
 
 </RelativeLayout>
