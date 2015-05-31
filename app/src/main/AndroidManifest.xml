@@ -28,6 +28,14 @@
             android:name=".Settings"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+            android:name=".CreateRecipe"
+            android:label="@string/title_activity_recipe_main" >
+        </activity>
+        <activity
+            android:name=".ViewRecipe"
+            android:label="@string/title_activity_view_recipe" >
+        </activity>
     </application>
 
 </manifest>

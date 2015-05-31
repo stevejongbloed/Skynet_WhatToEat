@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class ApplicationMenu extends Activity {
@@ -34,7 +35,7 @@ public class ApplicationMenu extends Activity {
         switch(id){
 
             case R.id.a1:
-                login();
+                //login();
                 return true;
             case R.id.a2:
                 expirationDate();
@@ -47,9 +48,9 @@ public class ApplicationMenu extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void login(){
+    /*public void login(){
         startActivity(new Intent(ApplicationMenu.this,Login.class));
-    }
+    }*/
     public void expirationDate(){
         startActivity(new Intent(ApplicationMenu.this,IngredientsList.class));
     }
@@ -57,5 +58,14 @@ public class ApplicationMenu extends Activity {
     public void setting(){
         startActivity(new Intent(ApplicationMenu.this,Settings.class));
     }
+
+    public void createRecipe(View view){
+       startActivity(new Intent(ApplicationMenu.this, CreateRecipe.class));
+    }
+
+    public void viewRecipe(View view){
+        startActivity(new Intent(ApplicationMenu.this, ViewRecipe.class));
+    }
+
 
 }

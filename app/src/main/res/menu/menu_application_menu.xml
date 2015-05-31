@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ApplicationMenu">
 
-    <item
+    /*<item
         android:id="@+id/a1"
-        android:title="@string/action_login"
+        android:title=""
         android:orderInCategory="100"
         app:showAsAction="ifRoom" />
     <item
