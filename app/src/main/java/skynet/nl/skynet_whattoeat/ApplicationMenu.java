@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 
 public class ApplicationMenu extends Activity {
@@ -36,9 +34,12 @@ public class ApplicationMenu extends Activity {
         switch(id){
 
             case R.id.a1:
-                expirationDate();
+                login();
                 return true;
             case R.id.a2:
+                expirationDate();
+                return true;
+            case R.id.a3:
                 setting();
                 return true;
         }
@@ -46,12 +47,15 @@ public class ApplicationMenu extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void login(){
+        startActivity(new Intent(ApplicationMenu.this,Login.class));
+    }
     public void expirationDate(){
         startActivity(new Intent(ApplicationMenu.this,IngredientsList.class));
     }
 
     public void setting(){
-
+        startActivity(new Intent(ApplicationMenu.this,Settings.class));
     }
 
 }
