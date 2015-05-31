@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">What2eat</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="action_login">Login</string>
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
     <string name="action_ingredient">Expiration date</string>
     <string name="title_activity_ingredients_list">IngredientsList</string>
-    <string name="title_activity_login">login</string>
+    <string name="title_activity_login">Login</string>
     <string name="title_activity_settings">Settings</string>
 </resources>
