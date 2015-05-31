@@ -67,5 +67,6 @@ public class ApplicationMenu extends Activity {
         startActivity(new Intent(ApplicationMenu.this, ViewRecipe.class));
     }
 
+    //test
 
 }
