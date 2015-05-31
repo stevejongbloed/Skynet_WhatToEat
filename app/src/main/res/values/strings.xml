@@ -10,4 +10,12 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_recipe_main">RecipeMain</string>
     <string name="title_activity_view_recipe">ViewRecipe</string>
+    <string-array name="category_recipe">
+        <item>Placeholder1</item>
+        <item>Placeholder2</item>
+        <item>Placeholder3</item>
+        <item>Placeholder4</item>
+        <item>Placeholder5</item>
+        <item>Placeholder6</item>
+    </string-array>
 </resources>
