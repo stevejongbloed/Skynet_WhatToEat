@@ -49,7 +49,7 @@ public class ApplicationMenu extends Activity {
         startActivity(new Intent(ApplicationMenu.this,Login.class));
     }*/
     public void expirationDate(){
-        startActivity(new Intent(ApplicationMenu.this,IngredientsList.class));
+        startActivity(new Intent(ApplicationMenu.this,IngredientList.class));
     }
 
     public void setting(){

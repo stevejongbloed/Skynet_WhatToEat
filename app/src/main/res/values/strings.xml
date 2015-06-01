@@ -20,4 +20,5 @@
         <item>Placeholder5</item>
         <item>Placeholder6</item>
     </string-array>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
