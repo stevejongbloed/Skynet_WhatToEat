@@ -36,6 +36,10 @@ android:label="@string/title_activity_ingredients_list" >
             android:name=".ViewRecipe"
             android:label="@string/title_activity_view_recipe" >
         </activity>
+        <activity
+            android:name=".IngredientList"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>

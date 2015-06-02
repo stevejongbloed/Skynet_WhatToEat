@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
 public class ApplicationMenu extends Activity {
 
     @Override
@@ -31,7 +30,6 @@ public class ApplicationMenu extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         switch(id){
 
             case R.id.a1:
@@ -44,7 +42,6 @@ public class ApplicationMenu extends Activity {
                 setting();
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -52,7 +49,7 @@ public class ApplicationMenu extends Activity {
         startActivity(new Intent(ApplicationMenu.this,Login.class));
     }
     public void expirationDate(){
-        startActivity(new Intent(ApplicationMenu.this,IngredientsList.class));
+        startActivity(new Intent(ApplicationMenu.this,IngredientList.class));
     }
 
     public void setting(){

@@ -1,26 +1,227 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="skynet.nl.skynet_whattoeat.CreateRecipe"
     android:orientation="vertical"
-    android:id="@+id/recipe1">
+    android:id="@+id/recipe1"
+    android:weightSum="1">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:id="@+id/button"
-        android:onClick="goBack"/>
-
+    <!-- Create Recipe text-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Create Recipe"
+        android:clickable="false"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
+
+    <!-- LinearLayout to fill in a recipe name -->
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:id="@+id/recipe2">
+
+            <!-- Name text -->
+               <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="25dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Name:"
+                    android:clickable="false"
+                    android:id="@+id/textView1" />
+
+            <!-- EditText so that the user can fill in the name of his/her recipe -->
+               <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:clickable="true"
+                    android:hint="Fill in your recipes name here"
+                    android:id="@+id/setRecipeName"
+                    android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    <!-- Ingredients Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Add Ingredients"
+        android:clickable="false"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal" />
+
+    <!-- LinearLayout for Ingredients -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/recipe3"
+            android:weightSum="1">
+
+            <!-- ListView for all the ingredients that are added -->
+                <ListView
+                    android:layout_width="400dp"
+                    android:layout_height="59dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/ingredient_list"
+                    android:layout_weight="0.84" />
+
+            <!-- Button to add a ingredient to the ListVIew above -->
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="+"
+                    android:textSize="20sp"
+                    android:id="@+id/addIngredient" />
+        </LinearLayout>
+
+    <!-- Steps text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="20dp"
+        android:text="Add Steps"
+        android:clickable="false"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal" />
+
+    <!-- LinearLayout for steps -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/recipe4"
+            android:weightSum="1">
+
+            <!-- ListVIew that holds all steps that the user entered -->
+                <ListView
+                    android:layout_width="400dp"
+                    android:layout_height="59dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/steps_list"
+                    android:layout_weight="0.84"/>
+
+            <!-- Button to add a step to the above ListView -->
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="+"
+                    android:textSize="20sp"
+                    android:id="@+id/addSteps" />
+
+        </LinearLayout>
+
+    <!-- LinearLayout for food category picking -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/recipe5">
+
+           <!-- text Category -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:paddingTop="25dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Category:"
+                android:clickable="false"
+                android:id="@+id/textView4" />
+
+           <!-- Spinner for food category selection, can be found on strings.xml -->
+            <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="52dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/category_spinner"/>
+
+        </LinearLayout>
+    <!-- Spinner for the food category selection -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/recipe6">
+
+            <!-- Duration text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Duration(mins):"
+                android:clickable="false"
+                android:id="@+id/textView5" />
+
+            <!-- EditText so that the user can fill in the duration of his/her recipe -->
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:clickable="true"
+                android:id="@+id/setDuration"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    <!-- LinearLayout for buttons at the bottom -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:id="@+id/recipe7">
+
+            <!-- Button to go back to the main page -->
+                <Button
+                    android:layout_weight="1"
+                    android:layout_gravity="bottom"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="Back"
+                    android:onClick="goBack"
+                    android:id="@+id/backButton" />
+
+            <!-- Button to save the recipe -->
+            <Button
+                    android:layout_weight="1"
+                    android:layout_gravity="bottom"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="Save Recipe"
+                    android:onClick="saveRecipe"
+                    android:id="@+id/saveButton" />
+        </LinearLayout>
 
 </LinearLayout>
