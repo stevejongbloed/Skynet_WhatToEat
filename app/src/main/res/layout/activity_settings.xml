@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="skynet.nl.skynet_whattoeat.Settings">
+    tools:context="skynet.nl.skynet_whattoeat.Settings"
+    android:baselineAligned="true">
 
     <TextView
         android:layout_width="wrap_content"
