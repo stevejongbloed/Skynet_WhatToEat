@@ -349,4 +349,8 @@ public class IngredientList extends Activity {
 
         newMode = false;
     }
+    // Back to main screen
+    public void goBack(View view){
+        this.finish();
+    }
 }
