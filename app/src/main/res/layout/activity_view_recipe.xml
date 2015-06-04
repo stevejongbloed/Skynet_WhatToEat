@@ -2,15 +2,145 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="skynet.nl.skynet_whattoeat.ViewRecipe">
+    android:orientation="vertical"
+    tools:context="skynet.nl.skynet_whattoeat.ViewRecipe"
+    android:weightSum="1"
+    android:id="@+id/view_recipe">
 
+    <!-- Button to go back to the main screen -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/back_button1"
+        android:onClick="goBack"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/view_recipe1">
+
+            <!-- Recipe name text -->
+            <TextView
+                android:id="@+id/name_text"
+                android:textSize="20dp"
+                android:text="Recipe:"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="20dp"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- textView for holding the recipe name -->
+            <TextView
+                android:id="@+id/receive_name"
+                android:textSize="15dp"
+                android:hint="recipe name comes here"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="20dp"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    <!-- TextView with INGREDIENTS text -->
     <TextView
-        android:text="view Recipe test"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/ingredientsText"
+        android:layout_gravity="center"
+        android:text="INGREDIENTS"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"/>
+
+    <!-- ListView that holds all the recipes ingredients -->
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/listView2"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.09" />
+
+    <!-- ImageView that will (possibly) hold the image of the recipe -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/image_holder"
+        android:layout_gravity="center_horizontal" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/view_recipe2">
+
+        <!-- Total steps  name text -->
+        <TextView
+            android:id="@+id/name1"
+            android:textSize="15dp"
+            android:text="Total steps"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- textView for holding the number of steps -->
+        <TextView
+            android:id="@+id/receive_steps"
+            android:textSize="13dp"
+            android:hint="nr of steps comes here"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/view_recipe3">
+
+        <!-- Duration name text -->
+        <TextView
+            android:id="@+id/name2"
+            android:textSize="15dp"
+            android:text="Duration:"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- textView for holding the duration in minutes -->
+        <TextView
+            android:id="@+id/receive_duration"
+            android:textSize="13dp"
+            android:hint="duration (mins) comes here"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Button to start making the recipe -->
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="right"
+        android:text="Start"/>
 
 </LinearLayout>
