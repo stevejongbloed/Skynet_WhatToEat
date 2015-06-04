@@ -15,7 +15,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-//import com.example.oteken.what2eat.R;
 
 public class IngredientList extends Activity {
     private List<Ingredient> myIngredients = new ArrayList<Ingredient>();

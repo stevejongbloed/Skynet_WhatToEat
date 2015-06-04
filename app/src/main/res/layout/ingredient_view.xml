@@ -6,7 +6,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/myIngredients_imageImage"
-        android:src="@drawable/water"
         android:maxHeight="50dp"
         android:maxWidth="50dp"
         android:clickable="false"
@@ -47,5 +46,6 @@
         android:id="@+id/myIngredients_txtUnit"
         android:layout_alignBottom="@+id/myIngredients_imageImage"
         android:layout_toEndOf="@+id/myIngredients_txtAmount" />
+
 
 </RelativeLayout>
