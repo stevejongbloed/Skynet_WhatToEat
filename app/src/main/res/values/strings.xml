@@ -6,12 +6,12 @@
     <string name="action_login">Login</string>
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
-    <string name="action_ingredient">Expiration date</string>
-    <string name="title_activity_ingredients_list">IngredientsList</string>
+    <string name="action_ingredient">Ingredient</string>
+    <string name="title_activity_ingredients_list">Ingredients</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_settings">Settings</string>
-    <string name="title_activity_recipe_main">RecipeMain</string>
-    <string name="title_activity_view_recipe">ViewRecipe</string>
+    <string name="title_activity_recipe_main">Create recipe</string>
+    <string name="title_activity_view_recipe">Your recipes</string>
     <string-array name="category_recipe">
         <item>Placeholder1</item>
         <item>Placeholder2</item>
@@ -20,5 +20,5 @@
         <item>Placeholder5</item>
         <item>Placeholder6</item>
     </string-array>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Ingredients</string>
 </resources>

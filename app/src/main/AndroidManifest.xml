@@ -17,10 +17,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".IngredientsList"
-            android:label="@string/title_activity_ingredients_list" >
-        </activity>
-        <activity
             android:name=".Login"
             android:label="@string/title_activity_login" >
         </activity>
@@ -35,10 +31,6 @@
         <activity
             android:name=".ViewRecipe"
             android:label="@string/title_activity_view_recipe" >
-        </activity>
-        <activity
-            android:name=".IngredientList"
-            android:label="@string/title_activity_main" >
         </activity>
         <activity
             android:name=".IngredientList"
