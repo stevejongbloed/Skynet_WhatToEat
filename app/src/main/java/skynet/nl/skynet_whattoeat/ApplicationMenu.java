@@ -25,18 +25,19 @@ public class ApplicationMenu extends Activity {
     }
 
     @Override
+
+    // menu rop right
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         switch(id){
-
             case R.id.a1:
                 login();
                 return true;
             case R.id.a2:
-                expirationDate();
+                ingredient_list();
                 return true;
             case R.id.a3:
                 setting();
@@ -44,26 +45,26 @@ public class ApplicationMenu extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    // login start activity
     public void login(){
         startActivity(new Intent(ApplicationMenu.this,Login.class));
     }
-    public void expirationDate(){
+    // ingredient list start activity
+    public void ingredient_list(){
         startActivity(new Intent(ApplicationMenu.this,IngredientList.class));
     }
 
+    // settings start activity
     public void setting(){
         startActivity(new Intent(ApplicationMenu.this,Settings.class));
     }
 
+    // button to create recipe page
     public void createRecipe(View view){
        startActivity(new Intent(ApplicationMenu.this, CreateRecipe.class));
     }
-
+    // button to view recipe page
     public void viewRecipe(View view){
         startActivity(new Intent(ApplicationMenu.this, ViewRecipe.class));
     }
-
-    //TESTING
-
 }
