@@ -3,12 +3,15 @@ package skynet.nl.skynet_whattoeat;
 /**
  * Created by steve_000 on 1-6-2015.
  */
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
  * Created by Oteken on 17-05-15.
  */
-public class Ingredient
+public class Ingredient implements Parcelable
 {
     private String name;
     private Integer id;
@@ -69,5 +72,17 @@ public class Ingredient
     public void setExpirationDate(String expirationDate)
     {
         this.expirationDate = expirationDate;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
+
+
     }
 }

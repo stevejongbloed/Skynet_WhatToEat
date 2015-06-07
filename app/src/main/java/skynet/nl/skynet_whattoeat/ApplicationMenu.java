@@ -60,11 +60,11 @@ public class ApplicationMenu extends Activity {
     }
 
     // button to create recipe page
-    public void createRecipe(View view){
-       startActivity(new Intent(ApplicationMenu.this, CreateRecipe.class));
+    public void searchRecipe(View view){
+       startActivity(new Intent(ApplicationMenu.this, SearchRecipe.class));
     }
     // button to view recipe page
     public void viewRecipe(View view){
-        startActivity(new Intent(ApplicationMenu.this, ViewRecipe.class));
+        startActivity(new Intent(ApplicationMenu.this, MyRecipesActivity.class));
     }
 }

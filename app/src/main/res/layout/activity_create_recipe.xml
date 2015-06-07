@@ -48,7 +48,7 @@
                     android:paddingRight="20dp"
                     android:clickable="true"
                     android:hint="Fill in your recipes name here"
-                    android:id="@+id/setRecipeName"
+                    android:id="@+id/createRecipe_fieldName"
                     android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
@@ -78,7 +78,7 @@
                     android:layout_height="59dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/ingredient_list"
+                    android:id="@+id/createRecipe_ListViewIngredient"
                     android:layout_weight="0.84" />
 
             <!-- Button to add a ingredient to the ListVIew above -->
@@ -89,7 +89,8 @@
                     android:layout_marginRight="20dp"
                     android:text="+"
                     android:textSize="20sp"
-                    android:id="@+id/addIngredient" />
+                    android:id="@+id/createRecipe_buttonAddIngredients"
+                    android:onClick="addIngredients" />
         </LinearLayout>
 
     <!-- Steps text -->
@@ -117,7 +118,7 @@
                     android:layout_height="59dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/steps_list"
+                    android:id="@+id/createRecipe_ListViewSteps"
                     android:layout_weight="0.84"/>
 
             <!-- Button to add a step to the above ListView -->
@@ -128,7 +129,8 @@
                     android:layout_marginRight="20dp"
                     android:text="+"
                     android:textSize="20sp"
-                    android:id="@+id/addSteps" />
+                    android:id="@+id/createRecipe_buttonAddSteps"
+                    android:onClick="addStep" />
 
         </LinearLayout>
 
@@ -190,7 +192,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:clickable="true"
-                android:id="@+id/setDuration"
+                android:id="@+id/createRecipe_fieldDuration"
                 android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
@@ -209,8 +211,8 @@
                     android:layout_gravity="bottom"
                     android:layout_width="135dp"
                     android:layout_height="wrap_content"
-                    android:text="Back"
-                    android:onClick="goBack"
+                    android:text="Delete"
+                    android:onClick="deleteRecipe"
                     android:id="@+id/backButton" />
 
             <!-- Button to save the recipe -->
@@ -221,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:text="Save Recipe"
                     android:onClick="saveRecipe"
-                    android:id="@+id/saveButton" />
+                    android:id="@+id/createRecipe_buttonSaveRecipe" />
         </LinearLayout>
 
 </LinearLayout>

@@ -17,6 +17,7 @@ import java.util.List;
 
 
 public class IngredientList extends Activity {
+
     private List<Ingredient> myIngredients = new ArrayList<Ingredient>();
     private List<String> allUnits = getAllUnits();
     private List<String> allIngredients = getAllIngredients();
@@ -26,7 +27,7 @@ public class IngredientList extends Activity {
     private boolean newMode = false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredient_list);
 
@@ -280,7 +281,8 @@ public class IngredientList extends Activity {
 
         if(newMode)
         {
-            if(amount.getText().toString().length() > 0) {
+            if(amount.getText().toString().length() > 0)
+            {
                 Integer ingredientId = allIngredients.indexOf(dropdownIngredients.getSelectedItem());
                 Double newUnitAmount = Double.parseDouble(amount.getText().toString());
                 // Getting the selection from the dropdown menu, and selecting the right unit from
@@ -307,6 +309,7 @@ public class IngredientList extends Activity {
             {
                 String toast = "No amount filled";
                 Toast.makeText(IngredientList.this, toast, Toast.LENGTH_SHORT).show();
+                cancelNewIngredient();
             }
         }else
         {

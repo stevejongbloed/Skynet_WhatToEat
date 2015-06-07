@@ -35,8 +35,8 @@
 
             <!-- textView for holding the recipe name -->
             <TextView
-                android:id="@+id/receive_name"
-                android:textSize="15dp"
+                android:id="@+id/recipe_txtName"
+                android:textSize="20dp"
                 android:hint="recipe name comes here"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="20dp"
@@ -58,14 +58,13 @@
 
     <!-- ListView that holds all the recipes ingredients -->
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="103dp"
+        android:layout_width="wrap_content"
+        android:layout_height="124dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:id="@+id/listView2"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.09" />
+        android:id="@+id/recipe_ingredientsListView"
+        android:layout_gravity="center_horizontal" />
 
     <!-- ImageView that will (possibly) hold the image of the recipe -->
     <ImageView
@@ -76,6 +75,15 @@
         android:layout_gravity="center_horizontal" />
 
 
+    <ListView
+        android:layout_width="327dp"
+        android:layout_height="132dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/recipe_stepsListView"
+        android:layout_weight="0.10" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,26 +91,8 @@
         android:id="@+id/view_recipe2">
 
         <!-- Total steps  name text -->
-        <TextView
-            android:id="@+id/name1"
-            android:textSize="15dp"
-            android:text="Total steps"
-            android:layout_marginTop="120dp"
-            android:layout_marginLeft="20dp"
-            android:clickable="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
         <!-- textView for holding the number of steps -->
-        <TextView
-            android:id="@+id/receive_steps"
-            android:textSize="13dp"
-            android:hint="nr of steps comes here"
-            android:layout_marginTop="120dp"
-            android:layout_marginLeft="20dp"
-            android:clickable="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
@@ -124,7 +114,7 @@
 
         <!-- textView for holding the duration in minutes -->
         <TextView
-            android:id="@+id/receive_duration"
+            android:id="@+id/recipe_txtDuration"
             android:textSize="13dp"
             android:hint="duration (mins) comes here"
             android:layout_marginTop="10dp"
@@ -135,12 +125,5 @@
     </LinearLayout>
 
     <!-- Button to start making the recipe -->
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_gravity="right"
-        android:text="Start"/>
 
 </LinearLayout>

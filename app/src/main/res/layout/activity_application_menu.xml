@@ -28,10 +28,10 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@id/strut"
         android:layout_alignParentLeft="true"
-        android:text="CREATE RECIPE"
+        android:text="SEARCH RECIPE"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:onClick="createRecipe"
+        android:onClick="searchRecipe"
         android:id="@+id/a4" />
 
     <Button

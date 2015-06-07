@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".IngredientsList"
+            android:name=".IngredientList"
             android:label="@string/title_activity_ingredients_list" >
         </activity>
         <activity
@@ -37,12 +37,24 @@
             android:label="@string/title_activity_view_recipe" >
         </activity>
         <activity
-            android:name=".IngredientList"
+            android:name=".SearchRecipe"
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name=".IngredientList"
-            android:label="@string/title_activity_main" >
+            android:name=".StepActivity"
+            android:label="StepActivity" >
+        </activity>
+        <activity
+            android:name=".AddIngredientActivity"
+            android:label="AddIngredientActivity" >
+        </activity>
+        <activity
+            android:name=".AddStepActivity"
+            android:label="AddStepsActivity" >
+        </activity>
+        <activity
+            android:name=".MyRecipesActivity"
+            android:label="MyRecipesActivity" >
         </activity>
     </application>
 

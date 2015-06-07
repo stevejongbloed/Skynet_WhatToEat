@@ -8,6 +8,8 @@ import java.util.List;
  */
 public class Database {
 
+    public static ArrayList<Recipe> allRecipes = new ArrayList<>();
+
     public static List<String> getAllUnits()
     {
         List<String> allUnits = new ArrayList<String>();
@@ -33,5 +35,10 @@ public class Database {
 
 
         return allIngredients;
+    }
+
+    public static ArrayList<Recipe> getAllRecipes()
+    {
+        return allRecipes;
     }
 }
