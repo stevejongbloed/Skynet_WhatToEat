@@ -27,7 +27,7 @@ public class Login extends Activity {
         String passwordString = password.getText().toString();
 
 
-        if(usernameString == "admin"){
+        if(usernameString.equals("admin") && passwordString.equals("admin")){
             Toast.makeText(getApplicationContext(),"worked",Toast.LENGTH_LONG).show();
         }
         else{
