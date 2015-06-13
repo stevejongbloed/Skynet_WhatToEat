@@ -1,13 +1,11 @@
 package skynet.nl.skynet_whattoeat;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -18,20 +16,23 @@ public class Login extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ImageView img = (ImageView)findViewById(R.id.logoHolder);
+        img.setImageResource(R.mipmap.ic_launcher);
     }
 
+    //hardcoded login, main screen
     public void onClick(View v){
         EditText username = (EditText)findViewById(R.id.etUsername);
         String usernameString = username.getText().toString();
         EditText password = (EditText)findViewById(R.id.etPassword);
         String passwordString = password.getText().toString();
 
-
         if(usernameString.equals("admin") && passwordString.equals("admin")){
-            Toast.makeText(getApplicationContext(),"worked",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Welcome!",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(Login.this, ApplicationMenu.class));
         }
         else{
-            Toast.makeText(getApplicationContext(),"failed",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Wrong password, or Username",Toast.LENGTH_LONG).show();
         }
     }
 }

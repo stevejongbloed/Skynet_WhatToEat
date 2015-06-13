@@ -8,21 +8,20 @@
         android:label="@string/app_name"
         android:theme="@style/Holo" >
         <activity
-            android:name=".ApplicationMenu"
-            android:label="@string/app_name" >
+            android:name=".Login"
+            android:label="@string/title_activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".IngredientList"
-            android:label="@string/title_activity_ingredients_list" >
+            android:name=".ApplicationMenu"
+            android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".Login"
-            android:label="@string/title_activity_login" >
+            android:name=".IngredientList"
+            android:label="@string/title_activity_ingredients_list" >
         </activity>
         <activity
             android:name=".Settings"
