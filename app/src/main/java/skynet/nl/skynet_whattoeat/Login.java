@@ -11,13 +11,12 @@ import android.widget.Toast;
 
 public class Login extends Activity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ImageView img = (ImageView)findViewById(R.id.logoHolder);
-        img.setImageResource(R.mipmap.ic_launcher);
+        ImageView logo = (ImageView)findViewById(R.id.logoHolder);
+        logo.setImageResource(R.mipmap.ic_launcher); //set logo
     }
 
     //hardcoded login, main screen
