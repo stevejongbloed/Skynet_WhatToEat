@@ -5,11 +5,12 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:background="#274189"
+    android:background="#202020"
     tools:context="skynet.nl.skynet_whattoeat.Login">
 
     <ImageView
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/logoHolder"
@@ -17,9 +18,10 @@
 
     <TextView
         android:layout_gravity="center"
+        android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="25dp"
         android:textSize="23dp"
         android:textColor="#ffffff"
         android:text="What2Eat"/>
@@ -63,10 +65,10 @@
         android:text="Login"/>
 
     <TextView
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="180dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="23dp"
+        android:textSize="10dp"
         android:text="Skynet ©"
         android:textColor="#ffffff"
         android:id="@+id/textView6"

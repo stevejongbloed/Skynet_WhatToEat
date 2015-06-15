@@ -14,7 +14,6 @@ public class ApplicationMenu extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_application_menu);
-        ActionBar bar = getActionBar();
     }
 
     @Override
@@ -33,14 +32,8 @@ public class ApplicationMenu extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         switch(id){
-            case R.id.a1:
-                login();
-                return true;
             case R.id.a2:
                 ingredient_list();
-                return true;
-            case R.id.a3:
-                setting();
                 return true;
         }
         return super.onOptionsItemSelected(item);

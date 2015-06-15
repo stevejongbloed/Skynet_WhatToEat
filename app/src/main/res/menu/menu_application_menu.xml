@@ -4,22 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ApplicationMenu">
 
-    <item
-        android:id="@+id/a1"
-        android:title="@string/action_login"
-        android:orderInCategory="100"
-        app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/a2"
         android:title="@string/action_ingredient"
         android:orderInCategory="100"
         app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/a3"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="ifRoom" />
-
-
 </menu>

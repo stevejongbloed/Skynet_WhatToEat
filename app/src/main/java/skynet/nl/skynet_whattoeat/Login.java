@@ -2,11 +2,14 @@ package skynet.nl.skynet_whattoeat;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 
 public class Login extends Activity {
@@ -17,6 +20,14 @@ public class Login extends Activity {
         setContentView(R.layout.activity_login);
         ImageView logo = (ImageView)findViewById(R.id.logoHolder);
         logo.setImageResource(R.mipmap.ic_launcher); //set logo
+        getActionBar().hide();
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(),"American_Captain.ttf");
+        //Typeface myTypeface2 = Typeface.createFromAsset(getAssets(),"American_Captain.tff");
+
+        TextView myTextview = (TextView) findViewById(R.id.appName);
+        //TextView myTextview2 = (TextView) findViewById(R.id.appName);
+        //myTextview2.setTypeface(myTypeface2);
+        myTextview.setTypeface(myTypeface);
     }
 
     //hardcoded login, main screen
