@@ -12,6 +12,7 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_recipe_main">RecipeMain</string>
     <string name="title_activity_view_recipe">ViewRecipe</string>
+    <color name="orange">#FF8000</color>
     <string-array name="category_recipe">
         <item>Meat dish</item>
         <item>Fish dish</item>
