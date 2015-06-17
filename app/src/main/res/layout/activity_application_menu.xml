@@ -5,14 +5,31 @@
     tools:context=".Menu_Screen"
     android:background="#202020">
 
-    <ListView
-        android:background="#FFFFFF"
+    <TextView
+        android:id="@+id/txtwelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/a4" />
+        android:layout_centerHorizontal="true"
+        android:text="Welcome"
+        android:textColor="#FFF"
+        android:paddingTop="50dp"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/txtuser"
+        android:textColor="#FFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtwelcome"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Logout" />
+
 
     <View
         android:id="@+id/strut"

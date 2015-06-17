@@ -1,22 +1,45 @@
 package skynet.nl.skynet_whattoeat;
 
+import com.parse.ParseUser;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class ApplicationMenu extends Activity {
 
+    Button logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_application_menu);
         ActionBar bar = getActionBar();
+
+        // Retrieve current user from Parse.com
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        // Convert currentUser into String
+        String cUser = currentUser.getUsername().toString();
+        TextView txtuser = (TextView) findViewById(R.id.txtuser);
+
+        // Set the currentUser String into TextView
+        txtuser.setText("You are logged in as " + cUser);
+        logout = (Button) findViewById(R.id.logout);
+        logout.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View arg0) {
+                // Logout current user
+                ParseUser.logOut();
+                startActivity(new Intent(ApplicationMenu.this, Login.class));
+                finish();
+            }
+        });
     }
 
     @Override

@@ -2,47 +2,38 @@ package skynet.nl.skynet_whattoeat;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-
+import com.parse.ParseAnonymousUtils;
+import com.parse.ParseUser;
 
 public class Login extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        ImageView logo = (ImageView)findViewById(R.id.logoHolder);
-        logo.setImageResource(R.mipmap.ic_launcher); //set logo
-        getActionBar().hide();
-        Typeface myTypeface = Typeface.createFromAsset(getAssets(),"American_Captain.ttf");
-        //Typeface myTypeface2 = Typeface.createFromAsset(getAssets(),"American_Captain.tff");
 
-        TextView myTextview = (TextView) findViewById(R.id.appName);
-        //TextView myTextview2 = (TextView) findViewById(R.id.appName);
-        //myTextview2.setTypeface(myTypeface2);
-        myTextview.setTypeface(myTypeface);
-    }
-
-    //hardcoded login, main screen
-    public void onClick(View v){
-        EditText username = (EditText)findViewById(R.id.etUsername);
-        String usernameString = username.getText().toString();
-        EditText password = (EditText)findViewById(R.id.etPassword);
-        String passwordString = password.getText().toString();
-
-        if(usernameString.equals("admin") && passwordString.equals("admin")){
-            Toast.makeText(getApplicationContext(),"Welcome!",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(Login.this, ApplicationMenu.class));
+        // Determine whether the current user is an anonymous user
+        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+            // If user is anonymous, send the user to LoginSignupActivity.class
+            Intent intent = new Intent(Login.this,LoginSignupActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            // If current user is NOT anonymous user
+            // Get current user data from Parse.com
+            ParseUser currentUser = ParseUser.getCurrentUser();
+            if (currentUser != null) {
+                // Send logged in users to Welcome.class
+                Intent intent = new Intent(Login.this, ApplicationMenu.class);
+                startActivity(intent);
+                finish();
+            } else {
+                // Send user to LoginSignupActivity.class
+                Intent intent = new Intent(Login.this,
+                        LoginSignupActivity.class);
+                startActivity(intent);
+                finish();
+            }
         }
-        else{
-            Toast.makeText(getApplicationContext(),"Wrong password, or Username",Toast.LENGTH_LONG).show();
-        }
+
     }
 }
