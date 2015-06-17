@@ -14,10 +14,10 @@
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
     <string name="action_ingredient">Ingredients</string>
-    <string name="title_activity_ingredients_list">IngredientsList</string>
+    <string name="title_activity_ingredients_list">Current ingredients</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_settings">Settings</string>
-    <string name="title_activity_recipe_main">RecipeMain</string>
+    <string name="title_activity_recipe_main">Create recipe</string>
     <string name="title_activity_view_recipe">ViewRecipe</string>
     <color name="orange">#FF8000</color>
     <string-array name="category_recipe">

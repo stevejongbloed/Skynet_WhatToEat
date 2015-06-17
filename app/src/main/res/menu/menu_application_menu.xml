@@ -5,9 +5,25 @@
     tools:context=".ApplicationMenu">
 
 
+
+    <item
+        android:id="@+id/a1"
+        android:title='Create recipe'
+        android:orderInCategory="50"
+        app:showAsAction="ifRoom"
+        />
+
     <item
         android:id="@+id/a2"
         android:title="@string/action_ingredient"
         android:orderInCategory="100"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/a3"
+        android:title="Logout"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom"
+        />
+
 </menu>

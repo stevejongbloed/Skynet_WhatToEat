@@ -9,15 +9,6 @@
     android:weightSum="1">
 
     <!-- Create Recipe text-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Create Recipe"
-        android:clickable="false"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
 
     <!-- LinearLayout to fill in a recipe name -->
          <LinearLayout

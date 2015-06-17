@@ -31,7 +31,6 @@ public class IngredientList extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredient_list);
 
-
         populateIngredientList();
         populateListView();
         itemClickListen();
@@ -351,9 +350,5 @@ public class IngredientList extends Activity {
         amount.setVisibility(View.INVISIBLE);
 
         newMode = false;
-    }
-    // Back to main screen
-    public void goBack(View view){
-        this.finish();
     }
 }

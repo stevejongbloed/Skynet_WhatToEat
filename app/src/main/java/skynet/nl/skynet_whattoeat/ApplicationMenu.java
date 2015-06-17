@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 public class ApplicationMenu extends Activity {
 
-    Button logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,16 +29,6 @@ public class ApplicationMenu extends Activity {
 
         // Set the currentUser String into TextView
         txtuser.setText("You are logged in as " + cUser);
-        logout = (Button) findViewById(R.id.logout);
-        logout.setOnClickListener(new OnClickListener() {
-
-            public void onClick(View arg0) {
-                // Logout current user
-                ParseUser.logOut();
-                startActivity(new Intent(ApplicationMenu.this, Login.class));
-                finish();
-            }
-        });
     }
 
     @Override
@@ -58,16 +47,20 @@ public class ApplicationMenu extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         switch(id){
+            case R.id.a1:
+                createRecipe();
+                return true;
             case R.id.a2:
                 ingredient_list();
                 return true;
+            case R.id.a3:
+                ParseUser.logOut();
+                startActivity(new Intent(ApplicationMenu.this, Login.class));
+                finish();
         }
         return super.onOptionsItemSelected(item);
     }
-    // login start activity
-    public void login(){
-        startActivity(new Intent(ApplicationMenu.this,Login.class));
-    }
+
     // ingredient list start activity
     public void ingredient_list(){
         startActivity(new Intent(ApplicationMenu.this,IngredientList.class));
@@ -78,12 +71,18 @@ public class ApplicationMenu extends Activity {
         startActivity(new Intent(ApplicationMenu.this,Settings.class));
     }
 
-    // button to create recipe page
+    // New intent search recipes
     public void searchRecipe(View view){
        startActivity(new Intent(ApplicationMenu.this, SearchRecipe.class));
     }
-    // button to view recipe page
+
+    // New intent view your recipes
     public void viewRecipe(View view){
         startActivity(new Intent(ApplicationMenu.this, MyRecipesActivity.class));
+    }
+
+    //New intent create recipe
+    public void createRecipe(){
+        startActivity(new Intent(ApplicationMenu.this, CreateRecipe.class));
     }
 }
