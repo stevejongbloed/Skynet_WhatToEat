@@ -44,6 +44,9 @@ public class ApplicationMenu extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         switch(id){
+            case R.id.search:
+                searchRecipe();
+                return true;
             case R.id.a1:
                 createRecipe();
                 return true;
@@ -64,7 +67,7 @@ public class ApplicationMenu extends Activity {
     }
 
     // New intent search recipes
-    public void searchRecipe(View view){
+    public void searchRecipe(){
        startActivity(new Intent(ApplicationMenu.this, SearchRecipe.class));
     }
 
