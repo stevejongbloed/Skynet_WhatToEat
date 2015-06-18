@@ -25,9 +25,6 @@ public class ViewRecipe extends Activity {
 
     private static Recipe recipe;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,9 +64,6 @@ public class ViewRecipe extends Activity {
                 intent.putExtras(b);
 
                 startActivity(intent);
-
-
-
             }
         });
     }
@@ -103,7 +97,6 @@ public class ViewRecipe extends Activity {
             {
                 stepView = getLayoutInflater().inflate(R.layout.step_view, parent, false);
             }
-
             Step currentStep = recipe.getSteps().get(position);
 
             TextView stepTitle = (TextView) stepView.findViewById(R.id.step_txtTitle);
@@ -147,7 +140,6 @@ public class ViewRecipe extends Activity {
         }
 
     }
-
 
     public void goBack(View view){
         this.finish();

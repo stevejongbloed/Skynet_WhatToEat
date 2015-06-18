@@ -28,11 +28,13 @@ public class LoginSignupActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_signup);
-        getActionBar().hide();
+        getActionBar().hide(); //hide top actionbar on Login Screen.
 
+        // set logo on Login Screen
         ImageView logo = (ImageView)findViewById(R.id.logoHolder);
         logo.setImageResource(R.mipmap.ic_launcher); //set logo
 
+        // set font for the app name on Login Screen.
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"American_Captain.ttf");
         TextView myTextview = (TextView) findViewById(R.id.appName);
         myTextview.setTypeface(myTypeface);

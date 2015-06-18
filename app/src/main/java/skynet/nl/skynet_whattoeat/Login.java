@@ -22,14 +22,13 @@ public class Login extends Activity {
             // Get current user data from Parse.com
             ParseUser currentUser = ParseUser.getCurrentUser();
             if (currentUser != null) {
-                // Send logged in users to Welcome.class
+                // Send logged in user to ApplicationMenu.class
                 Intent intent = new Intent(Login.this, ApplicationMenu.class);
                 startActivity(intent);
                 finish();
             } else {
                 // Send user to LoginSignupActivity.class
-                Intent intent = new Intent(Login.this,
-                        LoginSignupActivity.class);
+                Intent intent = new Intent(Login.this,LoginSignupActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class ApplicationMenu extends Activity {
@@ -27,7 +25,7 @@ public class ApplicationMenu extends Activity {
         String cUser = currentUser.getUsername().toString();
         TextView txtuser = (TextView) findViewById(R.id.txtuser);
 
-        // Set the currentUser String into TextView
+        // Set the currentUser String into the TextView
         txtuser.setText("You are logged in as " + cUser);
     }
 
@@ -39,7 +37,6 @@ public class ApplicationMenu extends Activity {
     }
 
     @Override
-
     // menu rop right
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -64,11 +61,6 @@ public class ApplicationMenu extends Activity {
     // ingredient list start activity
     public void ingredient_list(){
         startActivity(new Intent(ApplicationMenu.this,IngredientList.class));
-    }
-
-    // settings start activity
-    public void setting(){
-        startActivity(new Intent(ApplicationMenu.this,Settings.class));
     }
 
     // New intent search recipes

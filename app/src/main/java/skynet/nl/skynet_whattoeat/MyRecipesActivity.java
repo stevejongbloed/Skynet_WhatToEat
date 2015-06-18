@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-
 /**
  * Created by Oteken on 07-06-15.
  */
@@ -25,11 +24,9 @@ public class MyRecipesActivity extends Activity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_recipes);
-
         populateRecipeList();
         populateListView();
         itemClickListen();
-
     }
 
     private static ArrayList<Recipe> template()
@@ -76,7 +73,6 @@ public class MyRecipesActivity extends Activity {
 
             return recipeView;
         }
-
     }
 
     private void itemClickListen()
@@ -94,8 +90,6 @@ public class MyRecipesActivity extends Activity {
                 intent.putExtras(b);
 
                 startActivity(intent);
-
-
             }
         });
 
@@ -110,7 +104,6 @@ public class MyRecipesActivity extends Activity {
         intent.putExtras(b);
 
         startActivity(intent);
-
     }
 
     public static ArrayList<Recipe> getRecipes()
