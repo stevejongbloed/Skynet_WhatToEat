@@ -15,7 +15,7 @@ public class Login extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
-        getActionBar().hide();
+        getActionBar().hide(); // hide top action bar
 
         //set image on splashscreen
         ImageView splashImg = (ImageView) findViewById(R.id.splashLogin);
@@ -60,6 +60,8 @@ public class Login extends Activity {
         };
         timer.start();
     }
+
+    // destroy splash screen if back button is pressed
     @Override
     public void onPause(){
         super.onPause();
