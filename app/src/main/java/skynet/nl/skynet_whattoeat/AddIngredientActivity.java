@@ -124,7 +124,7 @@ public class AddIngredientActivity extends Activity
                         list.getChildAt(selectedView).setBackgroundColor(0x00000000);
                     }
                     selectedView = position;
-                    clickedView.setBackgroundColor(0xFF00FF00);
+                    clickedView.setBackgroundColor(0x80FF8800);
                     newEdit();
                 } else
                 {

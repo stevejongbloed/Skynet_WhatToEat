@@ -110,7 +110,7 @@ public class IngredientList extends Activity {
                         list.getChildAt(selectedView).setBackgroundColor(0x00000000);
                     }
                     selectedView = position;
-                    clickedView.setBackgroundColor(0xFFF0FFF0);
+                    clickedView.setBackgroundColor(0x80FF8800);
                     newEdit();
                 } else
                 {

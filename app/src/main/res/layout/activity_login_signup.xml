@@ -65,6 +65,7 @@
         android:text="Login" />
 
     <Button
+        android:background="@android:color/transparent"
         android:id="@+id/signup"
         android:textColor="#ffffff"
         android:layout_gravity="center"

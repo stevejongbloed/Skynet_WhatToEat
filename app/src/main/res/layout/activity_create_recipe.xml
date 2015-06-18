@@ -176,6 +176,7 @@
 
             <!-- EditText so that the user can fill in the duration of his/her recipe -->
             <EditText
+                android:hint="0"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:gravity="center"
@@ -197,17 +198,11 @@
             android:id="@+id/recipe7">
 
             <!-- Button to go back to the main page -->
-                <Button
-                    android:layout_weight="1"
-                    android:layout_gravity="bottom"
-                    android:layout_width="135dp"
-                    android:layout_height="wrap_content"
-                    android:text="Delete"
-                    android:onClick="deleteRecipe"
-                    android:id="@+id/backButton" />
 
             <!-- Button to save the recipe -->
             <Button
+                    android:textColor="#FFF"
+                    android:background="#FF8000"
                     android:layout_weight="1"
                     android:layout_gravity="bottom"
                     android:layout_width="135dp"

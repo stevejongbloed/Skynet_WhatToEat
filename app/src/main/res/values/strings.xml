@@ -26,6 +26,6 @@
         <item>Vegan dish</item>
         <item>Vegetarian dish</item>
     </string-array>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Search recipes</string>
     <string name="title_activity_login_signup">LoginSignupActivity</string>
 </resources>

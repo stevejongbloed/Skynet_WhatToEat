@@ -241,14 +241,14 @@ public class CreateRecipe extends Activity implements AdapterView.OnItemSelected
         {
             Database.allRecipes.add(recipe);
         }
-        Intent intent = new Intent(CreateRecipe.this, MyRecipesActivity.class);
+        Intent intent = new Intent(CreateRecipe.this, ApplicationMenu.class);
         startActivity(intent);
     }
 
     public void deleteRecipe(View v)
     {
         Database.allRecipes.remove(chosenRecipe);
-        Intent intent = new Intent(CreateRecipe.this, MyRecipesActivity.class);
+        Intent intent = new Intent(CreateRecipe.this, ApplicationMenu.class);
         startActivity(intent);
     }
 

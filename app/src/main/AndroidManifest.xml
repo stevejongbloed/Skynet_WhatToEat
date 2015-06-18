@@ -26,7 +26,7 @@
         <activity
             android:name=".ApplicationMenu"
             android:icon="@android:color/transparent"
-            android:label="" >
+            android:label="WHAT2EAT - RECIPES" >
         </activity>
         <activity
             android:name=".IngredientList"
@@ -60,12 +60,12 @@
         </activity>
         <activity
             android:name=".AddIngredientActivity"
-            android:label="AddIngredientActivity"
+            android:label="Add ingredients to recipe"
             android:icon="@android:color/transparent" >
         </activity>
         <activity
             android:name=".AddStepActivity"
-            android:label="AddStepsActivity"
+            android:label="Add steps to recipe"
             android:icon="@android:color/transparent">
         </activity>
         <activity

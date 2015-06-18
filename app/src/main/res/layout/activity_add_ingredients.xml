@@ -1,106 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    >
 
     <ListView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:id="@+id/addIngredients_ListView"
         android:clickable="false"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="My Ingredients"
-        android:id="@+id/textView"
-        android:layout_marginTop="59dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignEnd="@+id/addIngredients_buttonSave"
+        android:layout_marginTop="42dp"
+        android:layout_alignParentStart="true" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:textColor="#FFF"
+        android:background="#FF8000"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="New Ingredient"
         android:id="@+id/addIngredients_buttonNewIngredient"
-        android:layout_marginBottom="33dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView"
-        android:onClick="newIngredient" />
+        android:onClick="newIngredient"
+        android:layout_above="@+id/addIngredients_buttonEdit"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:textColor="#FFF"
+        android:background="#FF8000"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Delete"
         android:id="@+id/addIngredients_buttonDelete"
         android:clickable="true"
         android:onClick="deleteIngredient"
-        android:layout_above="@+id/addIngredients_buttonNewIngredient"
-        android:layout_alignStart="@+id/addIngredients_buttonNewIngredient" />
+        android:layout_above="@+id/addIngredients_buttonSave"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:textColor="#FFF"
+        android:background="#FF8000"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Edit"
         android:id="@+id/addIngredients_buttonEdit"
         android:clickable="true"
         android:onClick="editIngredient"
-        android:layout_above="@+id/addIngredients_buttonNewIngredient"
-        android:layout_alignEnd="@+id/addIngredients_buttonNewIngredient" />
+        android:layout_above="@+id/addIngredients_buttonSave"
+        android:layout_marginBottom="48dp"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/addIngredients_editAmount"
-        android:layout_below="@+id/addIngredients_buttonEdit"
-        android:layout_toEndOf="@+id/textView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/addIngredients_buttonNewIngredient"
+        android:layout_below="@+id/addIngredients_dropdownIngredient" />
 
     <Spinner
         android:id="@+id/addIngredients_dropdownUnit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
         android:visibility="invisible"
         android:layout_above="@+id/addIngredients_editAmount"
-        android:layout_alignStart="@+id/addIngredients_editAmount"
-        android:layout_alignTop="@+id/addIngredients_buttonEdit" />
+        android:layout_alignStart="@+id/addIngredients_editAmount" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/addIngredients_dropdownIngredient"
         android:visibility="invisible"
-        android:layout_alignTop="@+id/addIngredients_buttonDelete"
+        android:layout_below="@+id/addIngredients_ListView"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/addIngredients_buttonSave"
-        android:layout_above="@+id/addIngredients_buttonNewIngredient" />
+        android:layout_toStartOf="@+id/addIngredients_dropdownUnit" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:id="@+id/back_button"
-        android:onClick="goBack" />
-
-    <Button
-        android:layout_width="wrap_content"
+        android:textColor="#FFF"
+        android:background="#FF8000"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Save Ingredients"
         android:id="@+id/addIngredients_buttonSave"
-        android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/textView"
-        android:onClick="saveIngredients" />
+        android:onClick="saveIngredients"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
 
