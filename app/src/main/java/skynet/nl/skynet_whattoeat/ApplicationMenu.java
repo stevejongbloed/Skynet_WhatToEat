@@ -52,7 +52,7 @@ public class ApplicationMenu extends Activity {
                 return true;
             case R.id.a3:
                 ParseUser.logOut();
-                startActivity(new Intent(ApplicationMenu.this, Login.class));
+                startActivity(new Intent(ApplicationMenu.this, LoginSignupActivity.class));
                 finish();
         }
         return super.onOptionsItemSelected(item);
