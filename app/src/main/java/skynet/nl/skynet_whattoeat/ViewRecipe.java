@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -43,12 +44,17 @@ public class ViewRecipe extends Activity {
 
         this.recipe = SearchRecipe.getChosenRecipe();
 
+        // Set name.
         TextView recipeName = (TextView) findViewById(R.id.recipe_txtName);
         recipeName.setText(recipe.getName());
 
+        // Set duration.
         TextView duration = (TextView) findViewById(R.id.recipe_txtDuration);
         duration.setText(recipe.getDuration().toString());
 
+        // Set category.
+        TextView category = (TextView) findViewById(R.id.viewRecipe_dropdownCategories);
+        category.setText(recipe.getCategory().getName());
     }
 
     private void itemClickListen() {
@@ -142,8 +148,11 @@ public class ViewRecipe extends Activity {
     }
 
     public void goBack(View view){
-        this.finish();
+
+        Intent intent = new Intent(ViewRecipe.this, SearchRecipe.class);
+        startActivity(intent);
     }
+
 
     public static Recipe getRecipe()
     {

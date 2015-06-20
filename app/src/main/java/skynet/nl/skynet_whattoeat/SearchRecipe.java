@@ -9,11 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Oteken on 06-06-15.
@@ -21,9 +25,12 @@ import java.util.ArrayList;
 public class SearchRecipe extends Activity {
 
     private ArrayList<Recipe> allRecipes = new ArrayList<Recipe>();
-    private ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+    private ArrayList<Recipe> filteredRecipes = new ArrayList<Recipe>();
+    private ArrayList<Recipe> shownRecipes = new ArrayList<Recipe>();
     private static Recipe chosenRecipe;
     private String searchFor = "";
+    private List<String> category;
+    private Boolean filterApplied;
 
 
     @Override
@@ -33,10 +40,26 @@ public class SearchRecipe extends Activity {
 
         allRecipes = Database.getAllRecipes();
 
-        populateRecipeList();
-        populateListView();
-        itemClickListen();
-        searchBarListen();
+        // Intent is only filled when activity is activated from IngredientFormActivity class.
+        if(getIntent().getExtras() != null)
+        {
+            shownRecipes = getMatchingRecipes();
+            categoryFilter();
+            populateListView();
+            itemClickListen();
+            searchBarListen();
+
+            // Invisible button on xml to stop form changes to visible.
+            Button stopButton = (Button) findViewById(R.id.searchRecipe_buttonStopIngredientForm);
+            stopButton.setVisibility(View.VISIBLE);
+        } else
+        {
+            populateRecipeList();
+            categoryFilter();
+            populateListView();
+            itemClickListen();
+            searchBarListen();
+        }
 
     }
 
@@ -90,7 +113,7 @@ public class SearchRecipe extends Activity {
 
     private void populateRecipeList()
     {
-        recipes.clear();
+        shownRecipes.clear();
         if(!(searchFor.equals("")))
         {
             if(allRecipes != null)
@@ -99,7 +122,7 @@ public class SearchRecipe extends Activity {
                 {
                     if (recipe.getName().toLowerCase().contains(searchFor.toLowerCase()))
                     {
-                        recipes.add(recipe);
+                        shownRecipes.add(recipe);
                     }
                 }
             }
@@ -120,11 +143,13 @@ public class SearchRecipe extends Activity {
         list.setAdapter(adapter);
     }
 
+
+
     private class MyListAdapter extends ArrayAdapter<Recipe>
     {
         public MyListAdapter()
         {
-            super(SearchRecipe.this, R.layout.recipe_view, recipes);
+            super(SearchRecipe.this, R.layout.recipe_view, shownRecipes);
         }
 
         @Override
@@ -136,7 +161,7 @@ public class SearchRecipe extends Activity {
                 recipeView = getLayoutInflater().inflate(R.layout.recipe_view, parent, false);
             }
 
-            Recipe currentRecipe = recipes.get(position);
+            Recipe currentRecipe = shownRecipes.get(position);
 
             TextView nameText = (TextView) recipeView.findViewById(R.id.searchRecipe_txtName);
             nameText.setText(currentRecipe.getName());
@@ -156,7 +181,13 @@ public class SearchRecipe extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View clickedView, int position, long id) {
 
-            chosenRecipe = recipes.get(position);
+            if(filterApplied)
+            {
+                chosenRecipe = filteredRecipes.get(position);
+            }else
+            {
+                chosenRecipe = shownRecipes.get(position);
+            }
 
             Intent intent = new Intent(SearchRecipe.this, ViewRecipe.class);
             startActivity(intent);
@@ -166,8 +197,135 @@ public class SearchRecipe extends Activity {
 
     }
 
+    private void populateListViewFiltered()
+    {
+        ArrayAdapter<Recipe> adapter = new MyListAdapter2();
+        ListView list = (ListView) findViewById(R.id.searchRecipe_ListView);
+        list.setAdapter(adapter);
+        filterApplied = true;
+    }
+
+    private class MyListAdapter2 extends ArrayAdapter<Recipe>
+    {
+        public MyListAdapter2()
+        {
+            super(SearchRecipe.this, R.layout.recipe_view, filteredRecipes);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent)
+        {
+            View recipeView = convertView;
+            if(recipeView == null)
+            {
+                recipeView = getLayoutInflater().inflate(R.layout.recipe_view, parent, false);
+            }
+
+            Recipe currentRecipe = filteredRecipes.get(position);
+
+            TextView nameText = (TextView) recipeView.findViewById(R.id.searchRecipe_txtName);
+            nameText.setText(currentRecipe.getName());
+
+            TextView durationText = (TextView) recipeView.findViewById(R.id.searchRecipe_txtDuration);
+            durationText.setText(currentRecipe.getDuration().toString());
+
+            return recipeView;
+        }
+    }
+
     public static Recipe getChosenRecipe()
     {
         return chosenRecipe;
+    }
+
+    public void newIngredientForm(View v)
+    {
+        Intent intent = new Intent(SearchRecipe.this, IngredientFormActivity.class);
+        startActivity(intent);
+    }
+
+    public void stopIngredientForm(View v)
+    {
+
+        // Change stop button to invisible.
+        Button stopButton = (Button) findViewById(R.id.searchRecipe_buttonStopIngredientForm);
+        stopButton.setVisibility(View.INVISIBLE);
+
+        populateRecipeList();
+        populateListView();
+        itemClickListen();
+        searchBarListen();
+    }
+
+    private ArrayList<Recipe> getMatchingRecipes()
+    {
+        ArrayList<Recipe> matches = new ArrayList<Recipe>();
+        matches = IngredientFormActivity.matchingRecipes;
+        return matches;
+    }
+
+    private void applyCategoryFilter()
+    {
+
+        ArrayList<Recipe> newRecipes = new ArrayList<Recipe>();
+        Spinner dropdownCategories = (Spinner) findViewById(R.id.searchRecipe_dropdownCategories);
+
+        // If category is on default, no filtering is applied.
+        if(!(((String)dropdownCategories.getSelectedItem()).equals("Default")))
+        {
+
+            for (int i = 0; i < shownRecipes.size(); i++)
+            {
+                String currentRecipeCategory = shownRecipes.get(i).getCategory().getName();
+                if (currentRecipeCategory.equals(dropdownCategories.getSelectedItem()))
+                {
+                    newRecipes.add(shownRecipes.get(i));
+                }
+            }
+
+            filteredRecipes = newRecipes;
+            populateListViewFiltered();
+            itemClickListen();
+            searchBarListen();
+        } else
+        {
+            populateListView();
+            itemClickListen();
+            searchBarListen();
+            filterApplied = false;
+        }
+    }
+
+    private void categoryFilter()
+    {
+        // Create category spinner.
+        Spinner dropdownCategories = (Spinner) findViewById(R.id.searchRecipe_dropdownCategories);
+        List<String> Categories = Database.getAllCategories();
+        Categories.add("Default");
+        ArrayAdapter<String> adapterCategories = new ArrayAdapter<String>(SearchRecipe.this, android.R.layout.simple_spinner_item, Categories);
+
+        dropdownCategories.setAdapter(adapterCategories);
+
+        // Set category.
+        dropdownCategories.setSelection(Categories.size() - 1);
+
+        dropdownCategories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                applyCategoryFilter();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    public void back(View v)
+    {
+        Intent intent = new Intent(SearchRecipe.this, ApplicationMenu.class);
+        startActivity(intent);
     }
 }

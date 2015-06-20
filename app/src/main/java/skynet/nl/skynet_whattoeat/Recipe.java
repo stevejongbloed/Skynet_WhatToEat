@@ -13,7 +13,16 @@ public class Recipe {
     private ArrayList<Step> steps;
     private Double duration;
     private Double rating;
-    private Catagory catagory;
+    private Category category;
+    private int stepCount;
+
+    public int getStepCount() {
+        return stepCount;
+    }
+
+    public void setStepCount(int stepCount) {
+        this.stepCount = stepCount;
+    }
 
     public void setName(String name) {
         Name = name;
@@ -35,8 +44,8 @@ public class Recipe {
         this.rating = rating;
     }
 
-    public void setCatagory(Catagory catagory) {
-        this.catagory = catagory;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
 
@@ -44,8 +53,8 @@ public class Recipe {
         return Name;
     }
 
-    public Catagory getCatagory() {
-        return catagory;
+    public Category getCategory() {
+        return category;
     }
 
     public Double getRating() {

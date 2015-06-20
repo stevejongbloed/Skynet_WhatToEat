@@ -12,6 +12,37 @@
         android:layout_marginTop="77dp"
         android:layout_alignEnd="@+id/searchRecipe_fieldSearch" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/recipe5"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/searchRecipe_fieldSearch"
+        android:layout_alignParentStart="true">
+
+        <!-- text Category -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Category:"
+            android:clickable="false"
+            android:id="@+id/randomid" />
+
+        <Spinner
+            android:layout_width="227dp"
+            android:layout_height="39dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/searchRecipe_dropdownCategories"/>
+
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,5 +59,37 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="97dp"
         android:layout_toEndOf="@+id/textView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search with ingredient form"
+        android:id="@+id/searchRecipe_buttonIngredientForm"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:nestedScrollingEnabled="false"
+        android:onClick="newIngredientForm" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop search with form"
+        android:id="@+id/searchRecipe_buttonStopIngredientForm"
+        android:visibility="invisible"
+        android:layout_above="@+id/searchRecipe_buttonIngredientForm"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="stopIngredientForm" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button6"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:onClick="back" />
 
 </RelativeLayout>

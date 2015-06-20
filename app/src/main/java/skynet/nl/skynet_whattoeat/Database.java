@@ -37,6 +37,18 @@ public class Database {
         return allIngredients;
     }
 
+    public static List<String> getAllCategories()
+    {
+        List<String> allCatogories = new ArrayList<String>();
+
+        allCatogories.add("Meat Dish");
+        allCatogories.add("Fish Dish");
+        allCatogories.add("Vegan Dish");
+        allCatogories.add("Vegetarian Dish");
+
+        return allCatogories;
+    }
+
     public static ArrayList<Recipe> getAllRecipes()
     {
         return allRecipes;

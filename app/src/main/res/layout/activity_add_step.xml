@@ -27,18 +27,27 @@
             android:layout_gravity="center_horizontal" />
 
         <EditText
-            android:layout_width="303dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:id="@+id/addStep_txtText"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.91"
+            android:layout_weight="0.95"
             android:hint="Text Here."
             android:textAlignment="inherit" />
+
+
+        <ImageView
+            android:layout_width="296dp"
+            android:layout_height="175dp"
+            android:id="@+id/addStep_ImageView"
+            android:layout_marginLeft="50dp"
+            android:onClick="takePic" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:id="@+id/addStep_txtStepNumber"
             android:layout_gravity="center_horizontal"
             android:hint="Step Number Here" />
@@ -50,8 +59,16 @@
             android:layout_height="wrap_content"
             android:text="Save Step"
             android:id="@+id/button2"
-            android:onClick="saveStep"
-            android:layout_gravity="center_horizontal" />
+            android:onClick="saveStep" />
+
+        <Button
+            android:textColor="#FFF"
+            android:background="#FF8000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Step"
+            android:id="@+id/button"
+            android:onClick="deleteStep" />
 
     </LinearLayout>
 </LinearLayout>

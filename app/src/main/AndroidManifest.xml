@@ -34,6 +34,11 @@
             android:icon="@android:color/transparent" >
         </activity>
         <activity
+            android:name=".AddPhotoActivity"
+            android:label="title_activity_add_photo"
+            android:icon="@android:color/transparent" >
+        </activity>
+        <activity
             android:name=".Settings"
             android:label="@string/title_activity_settings"
             android:icon="@android:color/transparent" >
@@ -46,6 +51,11 @@
         <activity
             android:name=".ViewRecipe"
             android:label="@string/title_activity_view_recipe"
+            android:icon="@android:color/transparent" >
+        </activity>
+        <activity
+            android:name=".IngredientFormActivity"
+            android:label="title_activity_ingredientform"
             android:icon="@android:color/transparent" >
         </activity>
         <activity

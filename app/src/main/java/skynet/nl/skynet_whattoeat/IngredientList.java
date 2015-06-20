@@ -45,10 +45,7 @@ public class IngredientList extends Activity {
 
     private void populateIngredientList()
     {
-        myIngredients.add(new Ingredient(allIngredients.indexOf("Banana"), new Unit(0, 5.0)));
-        myIngredients.add(new Ingredient(allIngredients.indexOf("Water"),new Unit(2, 5.0)));
-        myIngredients.add(new Ingredient(allIngredients.indexOf("Salt"), new Unit(1, 5.0)));
-        myIngredients.add(new Ingredient(allIngredients.indexOf("Spaghetti"), new Unit(0, 1.0)));
+
     }
 
     private void populateListView()

@@ -91,7 +91,13 @@ public class ApplicationMenu extends Activity {
 
     //New intent create recipe
     public void createRecipe(){
-        startActivity(new Intent(ApplicationMenu.this, CreateRecipe.class));
+        Intent intent = new Intent(ApplicationMenu.this, CreateRecipe.class);
+
+        Bundle b = new Bundle();
+        b.putInt("key", 999); //Your id
+        intent.putExtras(b);
+
+        startActivity(intent);;
     }
 
     private static ArrayList<Recipe> template()

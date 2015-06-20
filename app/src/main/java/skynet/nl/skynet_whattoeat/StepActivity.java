@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -44,6 +45,12 @@ public class StepActivity extends Activity
 
         TextView text = (TextView)findViewById(R.id.step_txtText);
         text.setText(step.getText());
+
+        if(step.getPhoto() != null)
+        {
+            ImageView image = (ImageView) findViewById(R.id.step_ImageView);
+            image.setImageDrawable(step.getPhoto().getDrawable());
+        }
     }
 
     public void lastStep(View v)
@@ -72,6 +79,12 @@ public class StepActivity extends Activity
 
             startActivity(intent);
         }
+    }
+
+    public void back(View v)
+    {
+        Intent intent = new Intent(StepActivity.this, ViewRecipe.class);
+        startActivity(intent);
     }
 
 }

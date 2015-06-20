@@ -14,13 +14,15 @@ import java.util.List;
 public class Ingredient implements Parcelable
 {
     private String name;
+
+
+
     private Integer id;
     private int iconId;
     // this is the unit of measurement e.a. kilogram, liter/litre
     private Unit unit;
     private String expirationDate;
     private static List<String> allIngredients = Database.getAllIngredients();
-
 
     public Ingredient(Integer id, Unit unit)
     {
@@ -29,6 +31,9 @@ public class Ingredient implements Parcelable
         this.unit = unit;
     }
 
+    public Integer getId() {
+        return id;
+    }
 
     public Ingredient(Integer id, Unit unit,
                       String expirationDate)

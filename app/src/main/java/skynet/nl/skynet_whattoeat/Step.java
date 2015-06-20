@@ -2,6 +2,7 @@ package skynet.nl.skynet_whattoeat;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.ImageView;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -23,6 +24,15 @@ public class Step implements Serializable {
     private Integer stepNumber;
     private ArrayList<Tool> tools;
     private ArrayList<Ingredient> ingredients;
+    private ImageView photo;
+
+    public ImageView getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(ImageView photo) {
+        this.photo = photo;
+    }
 
     public Integer getStepNumber() {
         return stepNumber;
