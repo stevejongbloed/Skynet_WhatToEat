@@ -36,7 +36,6 @@ public class CreateRecipe extends Activity implements AdapterView.OnItemSelected
         populateIngredientView();
         populateStepView();
         itemClickListen();
-
     }
 
     private static Recipe template()
