@@ -53,7 +53,7 @@
         android:ems="10"
         android:id="@+id/ingredientform_editAmount"
         android:visibility="invisible"
-        android:layout_above="@+id/ingredientform_buttonNewIngredient"
+        android:layout_above="@+id/ingredientform_buttonSearchForm"
         android:layout_alignParentEnd="true" />
 
 
@@ -63,15 +63,15 @@
         android:layout_height="wrap_content"
         android:spinnerMode="dropdown"
         android:visibility="invisible"
-        android:layout_above="@+id/ingredientform_buttonDelete"
-        android:layout_alignEnd="@+id/ingredientform_editAmount"
-        />
+        android:layout_above="@+id/ingredientform_dropdownIngredient"
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:id="@+id/ingredientform_dropdownIngredient"
         android:visibility="invisible"
-        android:layout_above="@+id/ingredientform_buttonSearchForm" />
+        android:layout_above="@+id/ingredientform_buttonSearchForm"
+        android:layout_toStartOf="@+id/ingredientform_editAmount" />
 
 </RelativeLayout>

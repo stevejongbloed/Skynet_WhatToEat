@@ -203,7 +203,6 @@
             <Button
                 android:textColor="#FFF"
                 android:background="#FF8000"
-                android:layout_weight="0.77"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Save Recipe"
@@ -213,8 +212,7 @@
             <Button
                     android:textColor="#FFF"
                     android:background="#FF8000"
-                    android:layout_weight="0.64"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="Delete Recipe"
                     android:onClick="deleteRecipe"

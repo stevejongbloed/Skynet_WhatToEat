@@ -26,12 +26,23 @@ public class Database {
     {
         List<String> allIngredients = new ArrayList<String>();
 
-        allIngredients.add("Water");
-        allIngredients.add("Banana");
-        allIngredients.add("Salt");
+        allIngredients.add("Tomato");
+        allIngredients.add("Cucumber");
+        allIngredients.add("Chicken");
         allIngredients.add("Spaghetti");
-        allIngredients.add("Fish");
-        allIngredients.add("Apple");
+        allIngredients.add("Beef");
+        allIngredients.add("Rice");
+        allIngredients.add("Aubergine");
+        allIngredients.add("Garlic");
+        allIngredients.add("Onion");
+        allIngredients.add("Lime");
+        allIngredients.add("Thyme");
+        allIngredients.add("Mint");
+        allIngredients.add("Paprica");
+        allIngredients.add("Salmon");
+        allIngredients.add("Dough");
+        allIngredients.add("Potato");
+
 
 
         return allIngredients;
@@ -41,11 +52,9 @@ public class Database {
     {
         List<String> allCatogories = new ArrayList<String>();
 
-        allCatogories.add("Meat Dish");
-        allCatogories.add("Fish Dish");
-        allCatogories.add("Vegan Dish");
-        allCatogories.add("Vegetarian Dish");
-
+        allCatogories.add("Entree");
+        allCatogories.add("Main course");
+        allCatogories.add("Dessert");
         return allCatogories;
     }
 

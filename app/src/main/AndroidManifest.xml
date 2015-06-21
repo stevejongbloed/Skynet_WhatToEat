@@ -35,7 +35,7 @@
         </activity>
         <activity
             android:name=".AddPhotoActivity"
-            android:label="title_activity_add_photo"
+            android:label="Add photo to step"
             android:icon="@android:color/transparent" >
         </activity>
         <activity
@@ -55,7 +55,7 @@
         </activity>
         <activity
             android:name=".IngredientFormActivity"
-            android:label="title_activity_ingredientform"
+            android:label="Ingredient Form"
             android:icon="@android:color/transparent" >
         </activity>
         <activity
