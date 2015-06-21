@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -149,8 +150,7 @@ public class ApplicationMenu extends Activity {
     private void itemClickListen()
     {
         final ListView list = (ListView) findViewById(R.id.myRecipes_ListView);
-        list.setOnItemClickListener( new AdapterView.OnItemClickListener()
-        {
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View clickedView, int position, long id) {
 
@@ -164,17 +164,6 @@ public class ApplicationMenu extends Activity {
             }
         });
 
-    }
-
-    public void createRecipe(View v)
-    {
-        Intent intent = new Intent(ApplicationMenu.this, CreateRecipe.class);
-
-        Bundle b = new Bundle();
-        b.putInt("key", 999); //Your id
-        intent.putExtras(b);
-
-        startActivity(intent);
     }
 
     public static ArrayList<Recipe> getRecipes()
